@@ -1,6 +1,5 @@
 # Django settings for rapoapp project.
 import os
-import sys
 
 PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
 
@@ -13,23 +12,11 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-if 'test' in sys.argv:
- DATABASES = {
-         'default' : {
-                        'ENGINE': 'django.db.backends.sqlite3',
-                        'NAME': 'mydatabase'
-                }
-    }
-else:
- DATABASES = {
+DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         #'NAME': '/home/rapoadmin/public_html/devrapo/rapoapp/rapo.db',                      # Or path to database file if using sqlite3.
         'NAME': 'testdb',                      # Or path to database file if using sqlite3.
-        'USER': 'root',                      # Not used with sqlite3.
-        'PASSWORD': 'rootMY1!',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
 		#'OPTIONS': {
 	    #         "init_command": "SET foreign_key_checks = 0;",
 	    #} 
